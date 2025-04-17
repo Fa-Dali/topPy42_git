@@ -1,0 +1,6 @@
+[submodule "src/repose_fibo_new"]
+	path = src/repose_fibo_new
+	url = https://github.com/Fa-Dali/repos_fibo_new.git
+[submodule "repos_fibo_new"]
+	path = repos_fibo_new
+	url = https://github.com/Fa-Dali/repos_fibo_new.git
