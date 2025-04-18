@@ -3,7 +3,9 @@
 #
 # sys.path.append(os.path.join(os.path.dirname(__file__), '../repos_fibo_new'))
 
-from repos_fibo_new.main import fibonacci_iterative
+from Projects.top_academy.topPy42_git.repos_fibo_new.main import (
+    fibonacci_iterative
+as fibonacci_iterative)
 
 def calculate(expression):
     # Убираем лишние пробелы
@@ -59,7 +61,7 @@ def calculator():
     print("Введите математическое выражение:")
     print("Примеры: 2 + 2, 3 * 4 - 5, 10 / 2")
     print("Введите 'exit' для выхода.")
-    print("Для вычисления Фибоначи: F(<ваше число>) :\n")
+    print("Для вычисления Фибоначи: F(<номер позиции>) :\n")
 
     while True:
         user_input = input("Введите выражение: ")
@@ -73,9 +75,12 @@ def calculator():
                 n = int(user_input[2: -1])
                 result = fibonacci_iterative(n)
 
-                print(f"Числа Фибоначи диапазона {n} : {result}")
+                print(f"Число Фибоначи на позиции {n} : {result}")
+                continue
+
             except ValueError:
                 print("Ошибка: не верный ввод для чисел Фибоначи.")
+                continue
 
         result = calculate(user_input)
         print(f"Результат: {result}")
