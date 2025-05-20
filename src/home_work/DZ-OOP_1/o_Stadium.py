@@ -5,7 +5,7 @@ class Stadium:
                  country='',
                  city='',
                  capacity=''):
-        
+
         self.name_stadium = name_stadium
         self.date_opening = date_opening
         self.country      = country
