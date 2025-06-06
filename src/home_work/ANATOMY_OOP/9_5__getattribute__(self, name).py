@@ -1,4 +1,4 @@
-# 9_5___getattribute__(self, name).py
+# 9_5__getattribute__(self, name).py
 
 '''
 Представь, что у тебя есть сундук с сокровищами, и ты решил спрятать в
