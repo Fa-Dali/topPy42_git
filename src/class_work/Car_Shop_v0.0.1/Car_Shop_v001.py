@@ -34,6 +34,7 @@ import  sys
 from time import sleep
 
 
+
 class Logic:
     @staticmethod
     def toggle_attribute(obj, attr_name):
@@ -51,7 +52,7 @@ class Logic:
 
     @staticmethod
     def quantity():
-        '''q = quantity'''
+        '''Выбор количества мест для сна'''
 
         var_bool = False
         vb = 1

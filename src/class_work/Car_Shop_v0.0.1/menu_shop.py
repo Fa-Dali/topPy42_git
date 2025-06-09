@@ -1,7 +1,7 @@
 
 import sys
-from Car_Shop import *
-from Car_Shop import Logic
+from Car_Shop_v001 import *
+from Car_Shop_v001 import Logic
 
 def show_main_menu():
     """Главное меню"""
