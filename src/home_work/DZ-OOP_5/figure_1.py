@@ -13,6 +13,14 @@ class Figure:
                                   "\n3. Прямоугольный Треугольник"
                                   "\n4. Трапеция")
 
+    def __int__(self):
+        return int(self.square()) # округлелие площади вниз до целого числа
+
+    def __str__(self):
+        raise NotImplementedError("Метод строкового представления "
+                                  "должен быть реализован в производных "
+                                  "классах")
+
 # Производные классы
 class Rectangle(Figure):
     '''
@@ -29,6 +37,13 @@ class Rectangle(Figure):
     def square(self):
         return  self.length * self.width
 
+    def __str__(self):
+        return (f"\nПрямоугольник\n"
+                f"  длина  : {self.length}{unit}\n"
+                f"  ширина : {self.width}{unit}\n"
+                f"---------------\n"
+                f"Площадь  : {self.square():.2f}{unit}^2")
+
 class Circle(Figure):
     '''
     arg:
@@ -41,6 +56,12 @@ class Circle(Figure):
 
     def square(self):
         return math.pi * (self.radius ** 2)
+
+    def __str__(self):
+        return (f"\nКруг\n"
+                f"  радиус : {self.radius}{unit}\n"
+                f"---------------\n"
+                f"Площадь  : {self.square():.2f}{unit}^2")
 
 class RightAngledTriangle(Figure):
     '''
@@ -57,6 +78,13 @@ class RightAngledTriangle(Figure):
 
     def square(self):
         return 0.5 * self.catheter_1 * self.catheter_1
+
+    def __str__(self):
+        return (f"\nПрямоугольный треугольник\n"
+                f"  катет 1 : {self.catheter_1}{unit}\n"
+                f"  катет 2 : {self.catheter_2}{unit}\n"
+                f"---------------\n"
+                f"Площадь  : {self.square():.2f}{unit}^2")
 
 class Trapezoid(Figure):
     '''
@@ -76,12 +104,14 @@ class Trapezoid(Figure):
     def square(self):
         return ((self.footing_1 + self.footing_2) / 2) * self.height
 
+    def __str__(self):
+        return (f"\nТрапеция с основанием\n"
+                f"  основание 1 : {self.footing_1}{unit}\n"
+                f"  основание 2 : {self.footing_2}{unit}\n"
+                f"  высота      : {self.height}{unit}\n"
+                f"---------------\n"
+                f"Площадь  : {self.square():.2f}{unit}^2")
 
-# Определяем объекты
-o_Rectangle = Rectangle(5, 10)
-o_Circle = Circle(7)
-o_RightAngledTriangle =RightAngledTriangle(3, 4)
-o_Trapezoid = Trapezoid(5, 10, 6)
 
 us_inp = input("Выберите единицы измерения:"
                "\n1. километры"
@@ -102,10 +132,19 @@ else:
     elif us_inp =='4':
         unit = "мм"
 
+# Определяем объекты
+o_Rectangle = Rectangle(5, 10)
+o_Circle = Circle(7)
+o_RightAngledTriangle =RightAngledTriangle(3, 4)
+o_Trapezoid = Trapezoid(5, 10, 6)
+
 # Вывод результата
 print(f"Площадь прямоугольника : {o_Rectangle.square()} ({unit})")
 print(f"Площадь круга          : {o_Circle.square():.2f} ({unit})")
 print(f"Площадь треугольника   : {o_RightAngledTriangle.square()} "
       f"({unit})")
 print(f"Площадь трапеции       : {o_Trapezoid.square()} ({unit})")
+print()
+print("Магический метод __int__:", int(o_Rectangle))
+print("Магический метод __str__:", str(o_Circle))
 
