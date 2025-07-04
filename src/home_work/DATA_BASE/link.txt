@@ -1,0 +1,1 @@
+https://github.com/Fa-Dali/topPy42_git/blob/main/src/home_work/DATA_BASE/DZ-2_fruits.sql
