@@ -774,7 +774,7 @@ def manage_programmers():
 
 def main():
     try:
-        db = DBManager('it_company_py', 'postgres', 'AfyLfkbyb=(1979)')
+        db = DBManager('it_company_py', 'postgres', '***PASSWORD***')
         db.create_all_tables()  # Явно создаем все таблицы
 
         global customer, project, manager, task, programmer
