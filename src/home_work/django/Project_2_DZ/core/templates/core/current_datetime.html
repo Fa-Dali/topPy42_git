@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Текущая дата и время</title>
+</head>
+<body>
+    <!-- Блок с текущей датой и временем -->
+    <h1>Текущая дата и время:</h1>
+    <p>{{ current_datetime | date:'d-m-Y H:i:s' }}</p>
+
+    <!-- Блок с таблицей умножения -->
+    <h2>Таблица умножения от 1 до 10</h2>
+    <table border="1">
+        {% for row in table_data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Блок с Днем программиста -->
+    <h1>День программиста в {{ programmer_day|date:"Y" }} году:</h1>
+    <p>{{ programmer_day|date:"j F Y" }}</p>
+</body>
+</html>
