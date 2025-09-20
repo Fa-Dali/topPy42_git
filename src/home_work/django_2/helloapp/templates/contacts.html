@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+<!-- Загружаем библиотеку static -->
+{% load static %}
+
+{% block title %}Контактные телефоны городских служб{% endblock %}
+
+{% block content %}
+<h1>Контакты композитора:</h1>
+<div class="image-container">
+    <img src="{% static 'images/photo3.png' %}" alt="Фото 2"/>
+</div>
+<dl>
+    <dt>Администрация города:</dt><dd>(XXX) XXX-XX-XX</dd>
+    <dt>Служба спасения:</dt><dd>(YYY) YYY-YY-YY</dd>
+</dl>
+
+<style>
+    /* Контейнер для выравнивания изображений */
+    .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Контейнеры вокруг изображений */
+    .image-container {
+        width: 250px;          /* Ширина контейнера равна ширине изображения */
+        text-align: center;    /* Выравниваем подпись по центру */
+    }
+
+    /* Сами изображения */
+    img {
+        object-fit: cover;     /* Масштабируем изображение, сохраняя пропорции */
+        width: 100%;           /* Растягиваем картинку на всю ширину контейнера */
+        height: auto;          /* Высота изображения определяется автоматически */
+    }
+</style>
+{% endblock %}

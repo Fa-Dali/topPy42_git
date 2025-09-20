@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Видеоархив{% endblock %}
+
+{% block content %}
+<h1>Мелодии написаны по астрологическим картам рождения</h1>
+<h2>Можно услышать свою мелодию...</h2>
+<p>Если написать ее по алгоритму записанному в вашей натальной карте в
+    зависимости от того, как расположены планеты.</p>
+<!-- Видео 1 -->
+
+      <iframe
+        width="720"
+        height="405"
+        src="https://rutube.ru/play/embed/517109a53f46915994e2852c29667d4d"
+        style="border: none;"
+        allow="clipboard-write; autoplay"
+        allowFullScreen
+      ></iframe>
+
+
+<!--<br />-->
+
+<!-- Видео 2 -->
+
+      <iframe
+        width="720"
+        height="405"
+        src="https://rutube.ru/play/embed/27fd5e34f514e35434588c5183f69374/?p=WiAbKOVMKq8U3YPSMquqxQ"
+        style="border: none;"
+        allow="clipboard-write; autoplay"
+        allowFullScreen
+      ></iframe>
+
+<p>Авторские права защищены 2021 - {{ current_datetime|date:"Y" }}</p>
+
+
+{% endblock %} endblock %}

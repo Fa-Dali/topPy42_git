@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+<!-- Загружаем библиотеку static -->
+{% load static %}
+
+{% block title %}Исторические фотографии города{% endblock %}
+
+{% block content %}
+<h1>Исторические фотографии</h1>
+<div class="gallery">
+    <div class="image-container">
+        <img src="{% static 'images/photo1.png' %}" alt="Фото 1"/>
+        <p>композитор: Fa Dali Astro</p>
+    </div>
+
+    <br/>
+
+    <div class="image-container">
+        <img src="{% static 'images/photo2.png' %}" alt="Фото 2"/>
+    </div>
+</div>
+
+<style>
+    /* Контейнер для выравнивания изображений */
+    .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Контейнеры вокруг изображений */
+    .image-container {
+        width: 250px;          /* Ширина контейнера равна ширине изображения */
+        text-align: center;    /* Выравниваем подпись по центру */
+    }
+
+    /* Сами изображения */
+    img {
+        object-fit: cover;     /* Масштабируем изображение, сохраняя пропорции */
+        width: 100%;           /* Растягиваем картинку на всю ширину контейнера */
+        height: auto;          /* Высота изображения определяется автоматически */
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        nav {
+            font-size: 24px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,.1);
+            overflow-y: auto;
+            max-width: 150px;
+            min-width: 150px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        nav li {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: blue;
+        }
+
+        /* Оформление сайдбара */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav li {
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        nav li > a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        nav li > a:hover {
+            background-color: #ddd;
+        }
+
+        /* Выпадающая часть */
+        .dropdown-menu {
+            display: none;
+            padding-left: 20px;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'news' %}">Новости</a></li>
+            <li><a href="{% url 'management' %}">Руководство</a></li>
+            <li><a href="{% url 'facts' %}">Факты</a></li>
+            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+
+            <!-- Группы подразделов истории -->
+            <li class="dropdown"><a href="#">История &#9660;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'history' %}">Общая информация</a></li>
+                    <li><a href="{% url 'people' %}">Люди</a></li>
+                    <li><a href="{% url 'photos' %}">Фотографии</a></li>
+                </ul>
+            </li>
+
+            <li><a href="{% url 'videos' %}">Видео</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
